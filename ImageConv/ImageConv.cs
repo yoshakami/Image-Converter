@@ -45,7 +45,6 @@ class Convert_class
     bool tiff = false;
     bool warn = false;
     bool stfu = false;
-    int pass = 0;
     string end;
     byte last_value_index = 0;
     void Check_extension(string ext)
@@ -97,18 +96,6 @@ class Convert_class
             imageIn = (Bitmap)Bitmap.FromFile(input_file);
             width = imageIn.Width;
             height = imageIn.Height;
-            /*
-            input_filename = input_file;
-            if (input_file.Contains('.'))
-            {
-                input_fil = System.IO.Path.GetFileNameWithoutExtension(input_file);  // removes the text after the extension dot.
-                input_ext = System.IO.Path.GetExtension(input_file).Substring(1);  // removes the text before the extension dot.
-            }
-            else
-            {
-                input_fil = input_file;
-            }
-            */
         }
     }
     void Check_depth(string depth)
@@ -220,101 +207,112 @@ class Convert_class
             gr.DrawImage(imageIn, new Rectangle(0, 0, width, height));
         using (var ms = new MemoryStream())
         {
-            while (true)
+            try
             {
-                if (png && last_value_index < 1)
+                while (true)
                 {
-                    imageOut.Save(ms, ImageFormat.Png);
-                    end = ".png";
-                    last_value_index = 1;
-                }
-                else if (tif && last_value_index < 2)
-                {
-                    imageOut.Save(ms, ImageFormat.Tiff);
-                    end = ".tif";
-                    last_value_index = 2;
-                }
-                else if (tiff && last_value_index < 3)
-                {
-                    imageOut.Save(ms, ImageFormat.Tiff);
-                    end = ".tiff";
-                    last_value_index = 3;
-                }
-                else if (jpg && last_value_index < 4)
-                {
-                    imageOut.Save(ms, ImageFormat.Jpeg);
-                    end = ".jpg";
-                    last_value_index = 4;
-                }
-                else if (jpeg && last_value_index < 5)
-                {
-                    imageOut.Save(ms, ImageFormat.Jpeg);
-                    end = ".jpeg";
-                    last_value_index = 5;
-                }
-                else if (gif && last_value_index < 6)
-                {
-                    imageOut.Save(ms, ImageFormat.Gif);
-                    end = ".gif";
-                    last_value_index = 6;
-                }
-                else if (ico && last_value_index < 7)
-                {
-                    imageOut.Save(ms, ImageFormat.Icon);
-                    end = ".ico";
-                    last_value_index = 7;
-                }
-                else if (bmp && last_value_index < 8)
-                {
-                    imageOut.Save(ms, ImageFormat.Bmp);
-                    end = ".bmp";
-                    last_value_index = 8;
-                }
-                else if (emf && last_value_index < 9)
-                {
-                    imageOut.Save(ms, ImageFormat.Emf);
-                    end = ".emf";
-                    last_value_index = 9;
-                }
-                else if (wmf && last_value_index < 10)
-                {
-                    imageOut.Save(ms, ImageFormat.Wmf);
-                    end = ".wmf";
-                    last_value_index = 10;
-                }
-                else if (exif && last_value_index < 11)
-                {
-                    imageOut.Save(ms, ImageFormat.Exif);
-                    end = ".exif";
-                    last_value_index = 11;
-                }
-                else if (memorybmp && last_value_index < 12)
-                {
-                    imageOut.Save(ms, ImageFormat.MemoryBmp);
-                    end = ".bmp";
-                    last_value_index = 12;
-                }
-                else
-                {
-                    break;  // prevents the function from being called infinitely :P
-                }
-                FileMode mode = System.IO.FileMode.CreateNew;
-                if (System.IO.File.Exists(output_fil + end))
-                {
-                    mode = System.IO.FileMode.Truncate;
-                    if (warn)
+                    if (png && last_value_index < 1)
                     {
-                        Console.WriteLine("Press enter to overwrite " + output_fil + end);
-                        Console.ReadLine();
+                        imageOut.Save(ms, ImageFormat.Png);
+                        end = ".png";
+                        last_value_index = 1;
+                    }
+                    else if (tif && last_value_index < 2)
+                    {
+                        imageOut.Save(ms, ImageFormat.Tiff);
+                        end = ".tif";
+                        last_value_index = 2;
+                    }
+                    else if (tiff && last_value_index < 3)
+                    {
+                        imageOut.Save(ms, ImageFormat.Tiff);
+                        end = ".tiff";
+                        last_value_index = 3;
+                    }
+                    else if (jpg && last_value_index < 4)
+                    {
+                        imageOut.Save(ms, ImageFormat.Jpeg);
+                        end = ".jpg";
+                        last_value_index = 4;
+                    }
+                    else if (jpeg && last_value_index < 5)
+                    {
+                        imageOut.Save(ms, ImageFormat.Jpeg);
+                        end = ".jpeg";
+                        last_value_index = 5;
+                    }
+                    else if (gif && last_value_index < 6)
+                    {
+                        imageOut.Save(ms, ImageFormat.Gif);
+                        end = ".gif";
+                        last_value_index = 6;
+                    }
+                    else if (exif && last_value_index < 7)
+                    {
+                        imageOut.Save(ms, ImageFormat.Exif);
+                        end = ".exif";
+                        last_value_index = 7;
+                    }
+                    else if (bmp && last_value_index < 8)
+                    {
+                        imageOut.Save(ms, ImageFormat.Bmp);
+                        end = ".bmp";
+                        last_value_index = 8;
+                    }
+                    else if (ico && last_value_index < 9)
+                    {
+                        imageOut.Save(ms, ImageFormat.Icon);
+                        end = ".ico";
+                        last_value_index = 9;
+                    }
+                    else if (emf && last_value_index < 10)
+                    {
+                        imageOut.Save(ms, ImageFormat.Emf);
+                        end = ".emf";
+                        last_value_index = 10;
+                    }
+                    else if (wmf && last_value_index < 11)
+                    {
+                        imageOut.Save(ms, ImageFormat.Wmf);
+                        end = ".wmf";
+                        last_value_index = 11;
+                    }
+                    else if (memorybmp && last_value_index < 12)
+                    {
+                        imageOut.Save(ms, ImageFormat.MemoryBmp);
+                        end = ".bmp";
+                        last_value_index = 12;
+                    }
+                    else
+                    {
+                        break;  // prevents the function from being called infinitely :P
+                    }
+                    FileMode mode = System.IO.FileMode.CreateNew;
+                    if (System.IO.File.Exists(output_fil + end))
+                    {
+                        mode = System.IO.FileMode.Truncate;
+                        if (warn)
+                        {
+                            Console.WriteLine("Press enter to overwrite " + output_fil + end);
+                            Console.ReadLine();
+                        }
+                    }
+                    using (System.IO.FileStream file = System.IO.File.Open(output_fil + end, mode, System.IO.FileAccess.Write))
+                    {
+                        file.Write(ms.ToArray(), 0, (int)ms.Length);
+                        file.Close();
+                        if (!stfu)
+                            Console.WriteLine(output_fil + end);
                     }
                 }
-                using (System.IO.FileStream file = System.IO.File.Open(output_fil + end, mode, System.IO.FileAccess.Write))
-                {
-                    file.Write(ms.ToArray(), 0, (int)ms.Length);
-                    file.Close();
-                    if (!stfu)
-                        Console.WriteLine(output_fil + end);
-                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                if (!stfu)
+                    Console.WriteLine("Invalid output parameters. File was not written");
+                if (warn)
+                    throw e;
             }
         }
     }
