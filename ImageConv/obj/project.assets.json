@@ -1,58 +1,33 @@
 {
   "version": 3,
-  "targets": {
-    ".NETFramework,Version=v4.8": {},
-    ".NETFramework,Version=v4.8/win7-x64": {}
-  },
+  "targets": {},
   "libraries": {},
-  "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.8": []
-  },
+  "projectFileDependencyGroups": {},
   "packageFolders": {
     "C:\\Users\\yoshi\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\yoshi\\3D Objects\\C#\\ImageConv\\ImageConv\\ImageConv.csproj",
-      "projectName": "ImageConv",
-      "projectPath": "X:\\yoshi\\3D Objects\\C#\\ImageConv\\ImageConv\\ImageConv.csproj",
+      "projectUniqueName": "X:\\yoshi\\3D Objects\\C#\\Image-Converter\\ImageConv\\ImageConv.csproj",
+      "projectPath": "X:\\yoshi\\3D Objects\\C#\\Image-Converter\\ImageConv\\ImageConv.csproj",
       "packagesPath": "C:\\Users\\yoshi\\.nuget\\packages\\",
-      "outputPath": "X:\\yoshi\\3D Objects\\C#\\ImageConv\\ImageConv\\obj\\",
+      "outputPath": "X:\\yoshi\\3D Objects\\C#\\Image-Converter\\ImageConv\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yoshi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
-      "originalTargetFrameworks": [
-        "net4.8"
-      ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
-      },
-      "frameworks": {
-        "net48": {
-          "targetAlias": "net4.8",
-          "projectReferences": {}
-        }
-      },
-      "warningProperties": {
-        "warnAsError": [
-          "NU1605"
-        ]
-      }
-    },
-    "frameworks": {
-      "net48": {
-        "targetAlias": "net4.8",
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win7-x64": {
-        "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to read project information for 'ImageConv': Invalid framework identifier ''."
+    }
+  ]
 }
