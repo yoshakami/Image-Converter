@@ -131,6 +131,7 @@ class Convert_class
                 depth_bpp = PixelFormat.Format16bppArgb1555;
                 break;
             case "16gray":
+            case "16grey":
             case "16g":
                 depth_bpp = PixelFormat.Format16bppGrayScale;
                 break;
@@ -178,11 +179,6 @@ class Convert_class
             return;
         for (ushort i = 1; i < args.Length; i++)
         {
-            if (pass > 0)
-            {
-                pass--;
-                continue;
-            }
             for (int j = 0; j < args[i].Length;)
             {
                 if (args[i][j] == '-')
@@ -205,8 +201,6 @@ class Convert_class
                     stfu = true;
                     break;
                 default:
-                    Check_depth(args[i]);
-                    Check_input_file(args[i]);
                     if (imageIn != null && args[i].Contains(".") && args[i].Length > 1)
                     {
                         output_fil = System.IO.Path.GetFileNameWithoutExtension(args[i]);  // removes the text after the extension dot (also removes the last dot).
@@ -216,11 +210,13 @@ class Convert_class
                     {
                         output_fil = args[i];
                     }
+                    Check_depth(args[i]);
+                    Check_input_file(args[i]);
                     break;
             }
         }
         Bitmap imageOut = new Bitmap(width, height, depth_bpp);
-        using (var gr = Graphics.FromImage(imageIn))
+        using (var gr = Graphics.FromImage(imageOut))
             gr.DrawImage(imageIn, new Rectangle(0, 0, width, height));
         using (var ms = new MemoryStream())
         {
