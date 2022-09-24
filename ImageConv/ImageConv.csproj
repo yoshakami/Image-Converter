@@ -6,6 +6,8 @@
 		<RootNamespace>ImageConv</RootNamespace>
 		<AssemblyName>ImageConv</AssemblyName>
 		<OutputType>Exe</OutputType>
+		<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+		<TargetFramework>net4.8</TargetFramework>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 		<SignAppxPackageExeFullPath>C:\Program Files (x86)\Microsoft SDKs\ClickOnce\SignTool\signtool.exe</SignAppxPackageExeFullPath>
 		<SignAssembly>Yosh</SignAssembly>
@@ -13,7 +15,6 @@
 		<Configurations>Debug;Release;Converter</Configurations>
 		<Platforms>AnyCPU;x64</Platforms>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
-		<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
 		<FileAlignment>512</FileAlignment>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<Deterministic>true</Deterministic>

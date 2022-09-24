@@ -1,6 +1,6 @@
 .idea/*
 .vs/*
-plt0/bin/*
-plt0/obj/*
+*/bin/*
+*/obj/*
 *.cache
 *.vsidx
