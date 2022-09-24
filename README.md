@@ -7,18 +7,21 @@ CLI app. List of supported arguments:
 (you can rename the exe to a smaller name if you want, it'll work with the new exe name)
 
 Input/Output images can be one of these
+<pre>
 bmp
 gif
-ico
 jpeg
 jpg
 png
 tif
 tiff
+<-- note: these crashes the app if the input image doesn't meet a certain criteria -->
+ico
 memorybmp
 exif
 wmf
 emf
+</pre>
 
 Depth can be one of these
 <pre>
