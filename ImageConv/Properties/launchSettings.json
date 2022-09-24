@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "debug": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\yoshi\\Pictures\\YouTube\\The Ultimate S3RL Tribute Mix -BEST S3RL MIX 2020-「KSWX」.jpg\" bmp 64"
+    }
+  }
+}

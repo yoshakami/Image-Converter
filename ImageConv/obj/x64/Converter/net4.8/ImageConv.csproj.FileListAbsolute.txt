@@ -1,0 +1,11 @@
+X:\yoshi\3D Objects\C#\ImageConv\ImageConv\obj\x64\Converter\net4.8\ImageConv.csproj.AssemblyReference.cache
+X:\yoshi\3D Objects\C#\ImageConv\ImageConv\obj\x64\Converter\net4.8\ImageConv.csproj.SuggestedBindingRedirects.cache
+X:\yoshi\3D Objects\C#\ImageConv\ImageConv\obj\x64\Converter\net4.8\ImageConv.GeneratedMSBuildEditorConfig.editorconfig
+X:\yoshi\3D Objects\C#\ImageConv\ImageConv\obj\x64\Converter\net4.8\ImageConv.AssemblyInfoInputs.cache
+X:\yoshi\3D Objects\C#\ImageConv\ImageConv\obj\x64\Converter\net4.8\ImageConv.AssemblyInfo.cs
+X:\yoshi\3D Objects\C#\ImageConv\ImageConv\obj\x64\Converter\net4.8\ImageConv.csproj.CoreCompileInputs.cache
+X:\yoshi\3D Objects\C#\ImageConv\x64\Converter\net4.8\ImageConv.exe.config
+X:\yoshi\3D Objects\C#\ImageConv\x64\Converter\net4.8\ImageConv.exe
+X:\yoshi\3D Objects\C#\ImageConv\x64\Converter\net4.8\ImageConv.pdb
+X:\yoshi\3D Objects\C#\ImageConv\ImageConv\obj\x64\Converter\net4.8\ImageConv.exe
+X:\yoshi\3D Objects\C#\ImageConv\ImageConv\obj\x64\Converter\net4.8\ImageConv.pdb
