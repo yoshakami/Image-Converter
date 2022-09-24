@@ -10,12 +10,13 @@ Input/Output images can be one of these
 <pre>
 bmp
 gif
-ico
 jpeg
 jpg
 png
 tif
 tiff
+<-- note: these crashes the app if the input image doesn't meet a certain criteria -->
+ico
 memorybmp
 exif
 wmf
