@@ -8,7 +8,6 @@ CLI app. List of supported arguments:
 
 Input/Output images can be one of these
 <pre>
-webp
 bmp
 gif
 jpeg
@@ -16,7 +15,8 @@ jpg
 png
 tif
 tiff
-<-- note: the formats below won't work if the input image doesn't meet a certain criteria -->
+<-- note: the formats below won't work as output if the input image doesn't meet a certain criteria -->
+webp
 ico
 memorybmp
 exif
