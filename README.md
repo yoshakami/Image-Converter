@@ -1,5 +1,5 @@
 # Image-Converter
-Converts images with .NET supported formats
+Converts images with .NET supported formats + WebP
 
 CLI app. List of supported arguments:
 <input file> [depth] [output extension(s)] [output file]
