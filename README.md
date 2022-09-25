@@ -61,7 +61,7 @@ Depth names with description
 </pre>
 
 ## about WebP Support
-WepP images can only be 24-bit RGB or 32-bit RGBA. this means you must add the parameter "24" or "32" if the output image format is webp.
+WepP images can only be 24-bit RGB or 32-bit RGBA. this means you must add the parameter "24" or "32" if the output image format is webp. <br>
 I took the source code of <a href="https://github.com/JosePineiro/WebP-wrapper">this repository</a> and I modified it a little so I could get the width and the height of the encoded webp image.
 
 ## examples:
