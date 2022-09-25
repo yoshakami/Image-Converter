@@ -10,11 +10,10 @@
 		<TargetFramework>net4.8</TargetFramework>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 		<SignAppxPackageExeFullPath>C:\Program Files (x86)\Microsoft SDKs\ClickOnce\SignTool\signtool.exe</SignAppxPackageExeFullPath>
-		<SignAssembly>Yosh</SignAssembly>
+		<SignAssembly>False</SignAssembly>
 		<SignManifests>Yosh</SignManifests>
 		<Configurations>Debug;Release;Converter</Configurations>
 		<Platforms>AnyCPU;x64</Platforms>
-		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<FileAlignment>512</FileAlignment>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<Deterministic>true</Deterministic>
@@ -34,41 +33,50 @@
 		<UseApplicationTrust>false</UseApplicationTrust>
 		<BootstrapperEnabled>true</BootstrapperEnabled>
 		<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+		<NoWin32Manifest>true</NoWin32Manifest>
+		<Title>ImageConv</Title>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Converter|AnyCPU'">
 		<Optimize>True</Optimize>
 		<WarningLevel>9999</WarningLevel>
 		<DefineConstants>$(DefineConstants)TRACE</DefineConstants>
+		<DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Converter|x64'">
 		<Optimize>True</Optimize>
 		<WarningLevel>9999</WarningLevel>
 		<DefineConstants>$(DefineConstants)TRACE</DefineConstants>
+		<DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<WarningLevel>9999</WarningLevel>
 		<DefineConstants>$(DefineConstants)TRACE</DefineConstants>
+		<DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<WarningLevel>9999</WarningLevel>
 		<DefineConstants>$(DefineConstants)TRACE</DefineConstants>
+		<DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
 		<WarningLevel>9999</WarningLevel>
 		<DefineConstants>$(DefineConstants)TRACE</DefineConstants>
+		<DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
 		<WarningLevel>9999</WarningLevel>
 		<DefineConstants>$(DefineConstants)TRACE</DefineConstants>
+		<DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Include="AssemblyInfo1.cs" />
 		<Compile Include="ImageConv.cs" />
 	</ItemGroup>
 

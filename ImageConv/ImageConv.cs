@@ -49,42 +49,42 @@ class Convert_class
     byte last_value_index = 0;
     void Check_extension(string ext)
     {
-        switch (ext.ToUpper())
+        switch (ext.ToLower())
         {
-            case "BMP":
+            case "bmp":
                 bmp = true;
                 break;
-            case "GIF":
+            case "gif":
                 gif = true;
                 break;
-            case "ICO":
+            case "ico":
                 ico = true;
                 break;
-            case "JPEG":
+            case "jpeg":
                 jpeg = true;
                 break;
-            case "JPG":
+            case "jpg":
                 jpg = true;
                 break;
-            case "PNG":
+            case "png":
                 png = true;
                 break;
-            case "TIF":
+            case "tif":
                 tif = true;
                 break;
-            case "TIFF":
+            case "tiff":
                 tiff = true;
                 break;
-            case "MEMORYBMP":
+            case "memorybmp":
                 memorybmp = true;
                 break;
-            case "EXIF":
+            case "exif":
                 exif = true;
                 break;
-            case "WMF":
+            case "wmf":
                 wmf = true;
                 break;
-            case "EMF":
+            case "emf":
                 emf = true;
                 break;
         }
@@ -93,9 +93,20 @@ class Convert_class
     {
         if (System.IO.File.Exists(input_file) && imageIn == null)
         {
-            imageIn = (Bitmap)Bitmap.FromFile(input_file);
-            width = imageIn.Width;
-            height = imageIn.Height;
+            try
+            {
+                imageIn = (Bitmap)Bitmap.FromFile(input_file);
+                width = imageIn.Width;
+                height = imageIn.Height;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                if (!stfu)
+                    Console.WriteLine("Invalid input Image");
+                if (warn)
+                    throw e;
+            }
         }
     }
     void Check_depth(string depth)
@@ -178,13 +189,13 @@ class Convert_class
                 }
             }  // who had the stupid idea to add -- before each argument. I'm removing them all lol
             Check_extension(args[i]);
-            switch (args[i].ToUpper())
+            switch (args[i].ToLower())
             {
-                case "W":
-                case "WARN":
+                case "w":
+                case "warn":
                     warn = true;
                     break;
-                case "STFU":
+                case "stfu":
                     stfu = true;
                     break;
                 default:
@@ -202,13 +213,13 @@ class Convert_class
                     break;
             }
         }
-        Bitmap imageOut = new Bitmap(width, height, depth_bpp);
-        using (var gr = Graphics.FromImage(imageOut))
-            gr.DrawImage(imageIn, new Rectangle(0, 0, width, height));
         using (var ms = new MemoryStream())
         {
             try
             {
+                Bitmap imageOut = new Bitmap(width, height, depth_bpp);
+                using (var gr = Graphics.FromImage(imageOut))
+                    gr.DrawImage(imageIn, new Rectangle(0, 0, width, height));
                 while (true)
                 {
                     if (png && last_value_index < 1)
@@ -310,7 +321,7 @@ class Convert_class
             {
                 System.Diagnostics.Debug.WriteLine(e.Message);
                 if (!stfu)
-                    Console.WriteLine("Invalid output parameters. File was not written");
+                    Console.WriteLine("An error occured when writing output file");
                 if (warn)
                     throw e;
             }
