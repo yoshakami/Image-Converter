@@ -25,9 +25,6 @@ class Convert_class
 {
     Bitmap imageIn;
     PixelFormat depth_bpp = PixelFormat.Format32bppPArgb;
-    /*string input_fil;
-    string input_ext;
-    string input_filename;*/
     string output_fil;
     int width;
     int height;
