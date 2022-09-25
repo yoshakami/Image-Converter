@@ -8,6 +8,7 @@ CLI app. List of supported arguments:
 
 Input/Output images can be one of these
 <pre>
+webp
 bmp
 gif
 jpeg
@@ -15,7 +16,7 @@ jpg
 png
 tif
 tiff
-<-- note: these crashes the app if the input image doesn't meet a certain criteria -->
+<-- note: the formats below won't work if the input image doesn't meet a certain criteria -->
 ico
 memorybmp
 exif
@@ -59,15 +60,28 @@ Depth names with description
 64pargb / 64p ("the red, green, and blue components are premultiplied according to the alpha component")
 </pre>
 
+## about WebP Support
+WepP images can only be 24-bit RGB or 32-bit RGBA. this means you must add the parameter "24" or "32" if the output image format is webp.
+I took the source code of <a href="https://github.com/JosePineiro/WebP-wrapper">this repository</a> and I modified it a little so I could get the width and the height of the encoded webp image.
+
 ## examples:
-#### Convert png to exif
-output file: apple_yoshi.exif
-<pre>ImageConv.exe yoshi.png apple_yoshi.exif</pre>
+no matter which format you choose, the syntax is the same. here's some commands examples which covers most features <br>
+feel free to rename the exe, so it's faster to use it. <br>
+Alternatively, you can make .bat files or .lnk shortcuts with custom icons to encode to a specific format.
+
+#### Convert png to jpeg
+output file: apple_yoshi.jpeg
+<pre>WebP-convert.exe yoshi.png apple_yoshi.jpeg</pre>
 
 #### Convert bmp to jpeg and ico and tiff on a specific output folder
 output files: C:/whatever/new_yoshi.jpeg, C:/whatever/new_yoshi.ico, C:/whatever/new_yoshi.tiff
-<pre>ImageConv.exe yoshi.bmp ico tiff C:/whatever/new_yoshi.jpeg</pre>
+(ico max dimensions are 256x256, trying to produce an image above this will throw an error)
+<pre>WebP-convert.exe yoshi.bmp ico tiff C:/whatever/new_yoshi.jpeg</pre>
 
-#### Convert gif to 64-bit depth png
-output file: yoshi64.png
-<pre>ImageConv.exe yoshi.gif png yoshi64</pre>
+#### Convert gif to 24-bit depth webp and throws the stack trace if an error occurs
+output file: yoshi24.png
+<pre>WebP-convert.exe yoshi.gif 24 webp yoshi64</pre>
+
+#### Convert webp to 64-bit bmp and make the console silent (it won't output the created files or tell you an error occured)
+output file: gal.bmp
+<pre>WebP-convert.exe gal.webp 64 stfu gal.bmp</pre>
