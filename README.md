@@ -79,7 +79,7 @@ output files: C:/whatever/new_yoshi.jpeg, C:/whatever/new_yoshi.ico, C:/whatever
 <pre>WebP-convert.exe yoshi.bmp ico tiff C:/whatever/new_yoshi.jpeg</pre>
 
 #### Convert gif to 24-bit depth webp and throws the stack trace if an error occurs
-output file: yoshi24.png
+output file: yoshi64.webp
 <pre>WebP-convert.exe yoshi.gif 24 webp yoshi64</pre>
 
 #### Convert webp to 64-bit bmp and make the console silent (it won't output the created files or tell you an error occured)
